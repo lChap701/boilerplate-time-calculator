@@ -17,6 +17,8 @@ def add_time(start, duration, day=""):
     # Gets the time
     startTime = datetime.strptime(start, "%I:%M %p")
 
+    # Based on:
+    # https://www.reddit.com/r/FreeCodeCamp/comments/j9el2q/i_did_the_python_time_calculator_challenge_in_30/
     if day:
         day = day.title()
 
@@ -29,11 +31,13 @@ def add_time(start, duration, day=""):
         timedelta(hours=float(duration.split(":")[
                   0]), minutes=float(duration[-2:]))
 
-    # Gets the final day
+    # Gets the final day based on:
+    # https://www.reddit.com/r/FreeCodeCamp/comments/j9el2q/i_did_the_python_time_calculator_challenge_in_30/
     if day:
         day = ", " + finalTime.strftime("%A")
 
-    # Gets the day message
+    # Gets the day message based on:
+    # https://www.reddit.com/r/FreeCodeCamp/comments/j9el2q/i_did_the_python_time_calculator_challenge_in_30/
     leftOver = finalTime.day - startTime.day
 
     if leftOver == 1:
